@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FecalisInc - лучшее решение для вашего бизнеса</title>
+
+    <!-- Bootstrap CSS Load -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap JS Load -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"
+        defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"
+        defer></script>
+
+    <!-- Font Montserrat Load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="/styles/landing.css">
+
+
+    <!-- JQuery load -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Animated Scroll Handle Script -->
+    <script src="/js/modules/handle_landing_animations.js"></script>
+
+</head>
+
+<body data-bs-theme="dark">
+    <!-- Header -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <div class="collapse navbar-collapse mt-3 mb-3 justify-content-between">
+                <!-- <img src="/assets/ico/logo_white.svg" class="mr-auto" width="40" alt=""> -->
+                <ul class="navbar-nav w-100 d-flex justify-content-between" id="landing_nav">
+                    <li class="nav-item" id="selector_main" data-scroll-to="main">
+                        <a class="nav-link">Главная</a>
+                    </li>
+                    <li class="nav-item" id="selector_issue" data-scroll-to="issue">
+                        <a class="nav-link">Проблема</a>
+                    </li>
+                    <li class="nav-item" id="selector_solution" data-scroll-to="solution">
+                        <a class="nav-link">Преимущества</a>
+                    </li>
+                    <li class="nav-item" id="selector_contacts" data-scroll-to="contacts">
+                        <a class="nav-link">Контакты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/app/auth?mode=login">Войти</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container pl-4 pr-4 pt-2">
+        <div class="container-fluid vh-100 animated inactive" id="main">
+            <div class="container text-center h-100 d-flex flex-column justify-content-center align-items-center">
+                <h1 style="color: #FFF"><strong>Fecalis Inc.</strong></h1>
+                <h2 style="color: #FFF" class="text-wrap w-50 text-center">Наше решение поможет не загнуться вашему
+                    бизнесу</h2>
+                <a href="/app/catalogue/" class="btn btn-danger w-25 mt-5">Перейти к каталогу</a>
+            </div>
+        </div>
+
+
+        <div class="container-fluid vh-100 animated inactive" id="issue">
+            <div class="row h-100 p-5">
+                <div class="col text-left align-self-start">
+                    <div class="text-center mt-5 mb-5">
+                        <img src="/assets/ico/problem.svg" width="120" alt="problem">
+                    </div>
+                    <h2>Проблема</h2>
+                    <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+                        Переписывается безопасную имени предупреждал эта силуэт путь предупредила текст послушавшись
+                        необходимыми, строчка, своего буквенных алфавит! Подзаголовок назад взгляд вопрос собрал?</p>
+                </div>
+                <div class="col align-self-end">
+                    <h2>Решение</h2>
+                    <p>Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты.
+                        Переписывается безопасную имени предупреждал эта силуэт путь предупредила текст послушавшись
+                        необходимыми, строчка, своего буквенных алфавит! Подзаголовок назад взгляд вопрос собрал?</p>
+                    <div class="text-center mt-5 mb-5">
+                        <img src="/assets/ico/solution.svg" width="120" alt="problem">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid vh-100 animated d-flex flex-column justify-content-around inactive" id="solution">
+            <h1 class="text-center"> <strong>Наши преимущества</strong> </h1>
+            <div class="row h-50 p-5 d-flex gap-3 lh-lg">
+                <div class="col bg-body-secondary p-4 border rounded-5" id="hover_animated">
+                    <div class="alert alert-primary border-0 d-flex justify-content-around align-items-center h-25"
+                        role="alert">
+                        <img class="" width="40" src="/assets/ico/availability.svg" alt="">
+                        <b>Доступность</b>
+                    </div>
+                    <p>
+                        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Они диких
+                        пустился переписали имеет залетают но над дорогу что!
+                    </p>
+                </div>
+                <div class="col bg-body-secondary p-4 border rounded-5" id="hover_animated">
+                    <div class="alert alert-success border-0 d-flex justify-content-around align-items-center h-25"
+                        role="alert">
+                        <img class="" width="40" src="/assets/ico/service.svg" alt="">
+                        <b>Удобный сервис</b>
+                    </div>
+                    <p>
+                        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Они диких
+                        пустился переписали имеет залетают но над дорогу что!
+                    </p>
+                </div>
+                <div class="col bg-body-secondary p-4 border rounded-5" id="hover_animated">
+                    <div class="alert alert-info border-0 d-flex justify-content-around align-items-center h-25"
+                        role="alert">
+                        <img class="" width="40" src="/assets/ico/delivery.svg" alt="">
+                        <b>Быстрая доставка</b>
+                    </div>
+                    <p>
+                        Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Они диких
+                        пустился переписали имеет залетают но над дорогу что!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid vh-100 d-flex flex-column justify-content-around animated inactive" id="contacts">
+            <h1 class="text-center"> <strong>Свяжитесь с нами</strong> </h1>
+            <div class="row">
+                <div class="col-sm-5">
+                    <p><b>Свяжитесь с нами и мы ответим в течении 24 часов</b></p>
+                    <p>Самара, Россия</p>
+                    <p>+7 919 809 29 98</p>
+                    <p>loprin05@gmail.com</p>
+                </div>
+                <div class="col-sm-7">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <input class="form-control" id="email" name="email" placeholder="Email" type="email"
+                                required>
+                        </div>
+                    </div>
+                    <textarea class="form-control mt-3" id="comments" name="comments" placeholder="Comment"
+                        rows="5"></textarea><br>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <button class="btn btn-danger w-50 pull-right" type="submit">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        // JQuery required
+
+        const sections_names = ['main', 'issue', 'solution', 'contacts'];
+        // (offsetTop, offsetBottom) array
+        const animation_play_padding = [200, 50];
+        const class_to_remove = 'inactive'
+
+        handle_selectors_and_sections_behaviour(sections_names, animation_play_padding, class_to_remove);
+
+    </script>
+
+
+</body>

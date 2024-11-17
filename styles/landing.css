@@ -1,0 +1,49 @@
+* {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+body * {
+    overflow: hidden;
+}
+
+.animated {
+    transition: all 1000ms;
+}
+
+.inactive {
+    transform: scale(.7);
+    opacity: .1;
+    filter: blur(20px);
+}
+
+#hover_animated {
+    transition: all 300ms;
+}
+
+#hover_animated:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+#landing_nav .nav-item {
+    color: #fff;
+    background-color: #343a40;
+    border-radius: 10px;
+    padding: 5px 20px;
+
+    transition: all 150ms;
+}
+
+#landing_nav .nav-item:hover {
+    transform: scale(1.03);
+    background-color: #da4857;
+    cursor: pointer;
+}
+
+#landing_nav .nav-item.active {
+    /* background-color: #dc3545; */
+}
