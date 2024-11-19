@@ -95,7 +95,7 @@
             $display = $active_category == intval($category['id']) ? '' : 'd-none';
         ?>
 
-        <div id="block_<? echo $category['id']?>" class="row <? echo $display ?>" data-db-id="<? echo $category['id']?>">
+        <div id="block_<? echo $category['id']?>" class="row <? echo $display ?> g-3" data-db-id="<? echo $category['id']?>">
                 
             <!-- Get product list -->
             <?
@@ -106,12 +106,12 @@
             <? foreach ($product_query as $product): ?>
             <!-- Product -->
             <div class="col-md-4">
-                <div class="card mb-4">
+                <div class="card mb-4 w-100 h-100">
                     <img src="<? echo $product['img_src'] ?>" width="300" height="300" class="card-img-top" alt="Товар" id="product_img">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
                         <h5 class="card-title" id="product_title"><? echo $product['title'] ?></h5>
-                        <p class="card-text" id="product_price">Цена: <? echo $product['price'] ?> ₽ за тонну</p>
-                        <a href="/app/product?id=<? echo $product['id'] ?>" class="btn btn-primary" id="product_more">Подробнее</a>
+                        <p class="card-text" id="product_price">Цена: <? echo $product['price'] ?> ₽ за 5 кг</p>
+                        <a href="/app/product?id=<? echo $product['id'] ?>" class="btn btn-primary mt-auto" id="product_more">Подробнее</a>
                     </div>
                 </div>
             </div>

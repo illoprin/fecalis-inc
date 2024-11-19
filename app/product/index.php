@@ -83,7 +83,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <img src="<? echo $info['img_src'] ?>" class="rounded" alt="Товар" id="product_img">
+                <img src="<? echo $info['img_src'] ?>" class="rounded w-100 h-100 object-fit-cover" alt="Товар" id="product_img">
             </div>
             <div class="col-md-6">
 

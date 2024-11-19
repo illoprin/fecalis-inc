@@ -2,7 +2,7 @@ function handle_cart() {
     const data = {
         request_type: 'get_cart_snippet'
     };
-    const url = '/server/action/catalogue_controller.php';
+    const url = '/server/catalogue_controller.php';
 
     post_data(url, data, () => {}, (responce) => {
         if (responce.status == 0) {
