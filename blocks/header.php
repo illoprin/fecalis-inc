@@ -38,6 +38,9 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="/app/account/?mode=user_data">Личный кабинет</a></li>
                             <li><a class="dropdown-item" href="/app/account/?mode=order">Управление заказами</a></li>
+                            <? if ($_COOKIE['role'] == '1'): ?>
+                            <li><a class="dropdown-item" href="/app/admin">Админ панель</a></li>
+                            <? endif; ?>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

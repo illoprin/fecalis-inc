@@ -166,13 +166,9 @@ if (!check_auth()) {
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 
-    
     <script src="/js/error_block_handle.js"></script>
     <script>
         fill_field($('#card_number'), user_data.card_number == 'null' ? 'null' : format(user_data.card_number, 'xxxx xxxx xxxx xxxx'), 'XXXX XXXX XXXX XXXX');
