@@ -23,6 +23,10 @@ const get_data = (form, trim = false) => {
     return hasEmpty ? false : values;
 };
 
+const has_empty_fields = (object) => {
+    
+}
+
 function redirect(url) {
     window.location.href = url;
 }

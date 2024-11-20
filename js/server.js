@@ -7,8 +7,7 @@ function post_data(url, data, before_send_func = () => {}, success_func = (respo
         dataType: 'json',
         data: {data: data},
         beforeSend: () => {
-            console.log(`Data sent to server by url = ${url}\nData composition is:`);
-            console.log(data);
+            console.log(`Data sent to server by url = ${url}\nData composition is:`, data);
             console.log(`Waiting for responce...`);
             before_send_func();
         },

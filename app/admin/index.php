@@ -88,8 +88,8 @@
 						$sql = 'SELECT firstname, secondname, login, avatar_src, phone FROM user WHERE id = ?';
 						$user = query($sql, [$order['client_id']])[0];
 
-						$status = null;
-						$status_style = null;
+						$status = '';
+						$status_style = '';
 						switch($order['delivery_status']) {
 							case 0:
 								$status = 'Доставлен';
@@ -186,10 +186,22 @@
 						<? if ($order['delivery_status'] == 1): ?>
 						<div class="row mt-4">
 							<div class="col text-start">
-								<button class="btn btn-danger" id="cancel_order">❌ Отменить</button>
+								<button 
+									class="btn btn-danger" 
+									id="cancel_order"
+									onclick="set_status(<? echo $order['id'] ?>, 2)"
+								>
+										❌ Отменить
+								</button>
 							</div>
 							<div class="col text-end">
-								<button class="btn btn-success" id="cancel_order">Доставлено ✅</button>
+								<button 
+									class="btn btn-success" 
+									id="cancel_order"
+									onclick="set_status(<? echo $order['id'] ?>, 0)"
+								>
+										Доставлено ✅
+								</button>
 							</div>
 						</div>
 						<? endif; ?>
@@ -223,7 +235,7 @@
 						</div>
 						<div class="col-5 d-flex flex-column justify-content-between align-items-end p-0">
 							<button class="btn btn-primary">🔧</button>
-							<button class="btn btn-danger">❌</button>
+							<button class="btn btn-danger" onclick="remove_product(<? echo $product['id'] ?>)">❌</button>
 						</div>
 					</div>
 					<? endforeach; ?>
@@ -244,8 +256,28 @@
 						<div class="modal-body">
 							<form action="" name="np">
 								<div class="form-group">
-									<label for="np_image" class="form-label text-secondary">Загрузите изображение товара</label>
-									<input type="file" class="form-control" name="product_img" id="np_image">
+									<div class="row">
+										<div class="col">
+											<label for="np_image" class="form-label text-secondary">Загрузите изображение товара</label>
+											<input type="file" class="form-control" name="product_img" id="np_image">
+										</div>
+
+										<?
+											$sql = 'SELECT id, name FROM category';
+											$categories = query($sql);
+										?>
+
+										<div class="col">
+											<label for="np_category" class="form-label text-secondary">Загрузите изображение товара</label>
+											<select name="category_id" class="form-select" id="np_category">
+												<option value="" selected>Выберите категорию</option>
+												<? foreach($categories as $category): ?>
+    											<option value="<? echo $category['id']?>"><? echo $category['name'] ?></option>
+												<? endforeach; ?>
+											</select>
+										</div>
+									</div>
+									
 								</div>
 								<div class="form-group mt-3">
 									<div class="row">
@@ -271,7 +303,7 @@
 						</div>
 						<div class="modal-footer d-flex justify-content-between">
 							<button class="btn btn-danger">Очистить форму</button>
-							<button class="btn btn-primary">Добавить товар</button>
+							<button class="btn btn-primary" onclick="add_product()">Добавить товар</button>
 						</div>
 					</div>
 				</div>
@@ -284,7 +316,10 @@
         require_once $root . '/blocks/footer.html';
     ?>
 
+	<script src="/js/server.js"></script>
+	<script src="/js/front_functions.js"></script>
     <script src="/js/modules/toggle_view_by_radio.js"></script>
+	<script src="/js/js_pages/admin.js"></script>
 	<script>
 		toggle_tabs_handler(
 			[$('#radio_order'), $('#radio_product')],
