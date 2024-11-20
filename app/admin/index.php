@@ -268,7 +268,7 @@
 										?>
 
 										<div class="col">
-											<label for="np_category" class="form-label text-secondary">Загрузите изображение товара</label>
+											<label for="np_category" class="form-label text-secondary">Выберете категорию</label>
 											<select name="category_id" class="form-select" id="np_category">
 												<option value="" selected>Выберите категорию</option>
 												<? foreach($categories as $category): ?>
