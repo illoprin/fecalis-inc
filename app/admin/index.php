@@ -244,7 +244,12 @@
 							<a href="/app/product?id=<? echo $product['id'] ?>" class="mt-auto" id="cart_product_more">Подробнее</a>
 						</div>
 						<div class="col-5 d-flex flex-column justify-content-between align-items-end p-0">
-							<button class="btn btn-primary">🔧</button>
+							<button 
+								class="btn btn-primary"
+								disabled 
+							>
+								🔧
+							</button>
 							<button class="btn btn-danger" onclick="remove_product(<? echo $product['id'] ?>)">❌</button>
 						</div>
 					</div>

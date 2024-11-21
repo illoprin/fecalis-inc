@@ -94,9 +94,9 @@
                             пользователя</label>
                         <input type="radio" class="btn-check" name="mode" id="radio_order" autocomplete="off" data-show-panel="order">
                         <label class="btn btn-outline-light pt-3 pb-3" for="radio_order">Заказы</label>
-                        <input type="radio" class="btn-check" name="mode" id="radio_controls" autocomplete="off" data-show-panel="controls">
+                        <!-- <input type="radio" class="btn-check" name="mode" id="radio_controls" autocomplete="off" data-show-panel="controls">
                         <label class="btn btn-outline-light pt-3 pb-3" for="radio_controls">Управление
-                            аккаунтом</label>
+                            аккаунтом</label> -->
                     </div>
 
 
@@ -480,16 +480,9 @@
 
         // JQuery required
         toggle_tabs_handler(
-            [$('#radio_user_data'), $('#radio_order'), $('#radio_controls')],
-            [$('#user_data'), $('#order'), $('#controls')],
-            'click', 'd-none',
-            (block) => {
-                // Change mode param in url
-                var url = new URL(window.location.href);
-                url.searchParams.set("mode", block.id);
-
-                console.log("Mode switch " + block.id);
-            }
+            [$('#radio_user_data'), $('#radio_order')],
+            [$('#user_data'), $('#order')],
+            'click', 'd-none'
         );
 
         toggle_tabs_handler(
