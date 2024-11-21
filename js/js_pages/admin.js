@@ -54,10 +54,15 @@ function add_product() {
 			console.log(data);
 			// Close modal window
 			$('#new_product_modal').modal('hide');
+			redirect('/app/admin?mode=product');
 		})
 		.catch(error => {
 			alert(error.message);
 		});
 	}
+}
 
+function clear_form() {
+	const form = document.forms.np;
+	form.reset();
 }

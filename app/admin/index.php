@@ -46,6 +46,14 @@
         require_once $root . '/blocks/header.php';  
     ?>
 
+	<?
+		$mode = isset($_GET['mode']) ? $_GET['mode'] : 'order';
+		$order_section_class = $mode == 'order' ? '' : 'd-none';
+		$product_section_class = $mode == 'product' ? '' : 'd-none';
+		$order_radio_checked = $mode == 'order' ? 'checked' : '';
+		$product_radio_checked = $mode == 'product' ? 'checked' : '';
+	?>
+
 	<div class="container mt-3">
         <div class="row gap-3 w-auto h-100 p-3">
             <!-- Left Column -->
@@ -55,9 +63,9 @@
                     <!-- Vertical Group Selector -->
                     <div class="btn-group-vertical w-100" role="group" aria-label="Admin page mode selector">
                         <input type="radio" class="btn-check" name="mode" id="radio_order" autocomplete="off"
-                            checked data-show-panel="order">
+                            data-show-panel="order" <? echo $order_radio_checked ?>>
                         <label class="btn btn-outline-light pt-3 pb-3" for="radio_order">Заказы клиентов</label>
-                        <input type="radio" class="btn-check" name="mode" id="radio_product" autocomplete="off" data-show-panel="product">
+                        <input type="radio" class="btn-check" name="mode" id="radio_product" autocomplete="off" data-show-panel="product" <? echo $product_radio_checked ?>>
                         <label class="btn btn-outline-light pt-3 pb-3" for="radio_product">Товары</label>
                     </div>
                 </div>
@@ -65,8 +73,10 @@
             </div>
             <!-- Right Column -->
 
+			
+
             <!-- Order data Section -->
-            <div class="col" id="order">
+            <div class="col <? echo $order_section_class ?>" id="order">
 				<div class="p-3 rounded-3 border border-secondary-subtle bg-body-secondary d-flex flex-column gap-3">
 					<?php
 						require_once $root . '/server/db.php';
@@ -212,7 +222,7 @@
 			</div>
 
 			<!-- Product Section -->
-            <div class="col d-none" id="product">
+            <div class="col <? echo $product_section_class ?>" id="product">
 				<div class="p-3 rounded-3 border border-secondary-subtle bg-body-secondary d-flex flex-column gap-3">
 					
 					<button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#new_product_modal">Добавить новый товар</button>
@@ -248,7 +258,7 @@
 			<div class="modal fade" id="new_product_modal" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"  aria-hidden="true">
 				<!-- Modal Dialog BG -->
 				<div class="modal-dialog modal-dialog-centered modal-lg">
-					<div class="modal-content bg-body-tertiary bg-opacity-50">
+					<div class="modal-content bg-black bg-opacity-50">
 						<div class="modal-header">
 							<h5 class="modal-title">Добавить новый товар</h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -302,7 +312,7 @@
 							</form>
 						</div>
 						<div class="modal-footer d-flex justify-content-between">
-							<button class="btn btn-danger">Очистить форму</button>
+							<button class="btn btn-danger" onclick="clear_form()">Очистить форму</button>
 							<button class="btn btn-primary" onclick="add_product()">Добавить товар</button>
 						</div>
 					</div>
